@@ -1,0 +1,16 @@
+- name: variables from propmt
+  hosts: web
+  vars_prompt:
+  - name: Name
+    prompt: Name of receiver
+  - name: Amount
+    prompt: Enter amount
+  - name: Sender
+    prompt: Enter sender name
+  - name: Bank
+    promt: Enter Bank name
+  tasks:
+  - name: print message
+    ansible.builtin.debug:
+      msg: "Hello {{Name}}, you've received INR {{Amount}} in your account. Woohoo! it was sent by {{Sender}} on Dec 24,2024 -{{Bank}}"
+  

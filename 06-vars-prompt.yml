@@ -8,7 +8,7 @@
   - name: Sender
     prompt: Enter sender name
   - name: Bank
-    promt: Enter Bank name
+    prompt: Enter Bank name
   tasks:
   - name: print message
     ansible.builtin.debug:

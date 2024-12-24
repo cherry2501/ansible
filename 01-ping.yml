@@ -1,5 +1,6 @@
--name: Ping module
- hosts: web #hosts to be connected
- tasks: #list of tasks
- -name: ping server 
-  ansible.builtin.ping: 
+- name: ping module
+  hosts: web
+  tasks:
+  - name: ping the server
+    ansible.builtin.ping:
+

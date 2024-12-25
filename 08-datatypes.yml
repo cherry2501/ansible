@@ -12,7 +12,7 @@
       - Virat
       - Pant
       - Rohit
-    Support Staff: #map/dictionary
+    Support_staff: #map/dictionary
       Head-Coach: Gambhir
       Fielding: Arun
       Batting: Abhishek
@@ -21,4 +21,4 @@
   tasks:
     - name: Datatypes
       ansible.builtin.debug:
-        msg: "Welcome to {{Series}}- Test{{Match}} @{{Venue}} India Squad:{{Batsmen}} Support Staff:{{Support Staff}} Weather condition{{Rain}}"
+        msg: "Welcome to {{Series}}- Test{{Match}} @{{Venue}} India Squad:{{Batsmen}} Support Staff:{{Support_staff}} Weather condition{{Rain}}"

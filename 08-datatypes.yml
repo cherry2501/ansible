@@ -13,11 +13,11 @@
       - Pant
       - Rohit
     Support Staff: #map/dictionary
-      - Head-Coach: Gambhir
-      - Fielding: Arun
-      - Batting: Abhishek
-      - Bowling: Mornie
-    Rain: false
+      Head-Coach: Gambhir
+      Fielding: Arun
+      Batting: Abhishek
+      Bowling: Mornie
+    Rain: false #boolean
   tasks:
     - name: Datatypes
       ansible.builtin.debug:

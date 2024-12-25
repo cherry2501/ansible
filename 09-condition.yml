@@ -1,0 +1,20 @@
+- name: When Condition
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: num
+      prompt: Enter num
+      private: false
+
+  tasks:
+    - name: Nprint if greathan 10
+      ansible.builtin.debug:
+        msg: "{{ num }} is greather than 10"
+      when: num | int > 10
+  
+  tasks:
+    - name: print if less than 10
+      ansible.builtin.debug:
+        msg: "{{ num }} is less than 10"
+      when: num | int < 10
+  

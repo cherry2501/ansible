@@ -21,4 +21,4 @@
   tasks:
     - name: Datatypes
       ansible.builtin.debug:
-        msg: "Welcome to {{Series}}- Test{{Match}} @{{Venue}} India Squad:{{Batsmen}} Support Staff:{{Support staff}} Weather condition{{Rain}}"
+        msg: "Welcome to {{Series}}- Test{{Match}} @{{Venue}} India Squad:{{Batsmen}} Support Staff:{{Support Staff}} Weather condition{{Rain}}"

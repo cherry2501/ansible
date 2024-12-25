@@ -3,6 +3,7 @@
   vars_prompt:
   - name: Name
     prompt: Name of receiver
+    private: false #not confidential
   - name: Amount
     prompt: Enter amount
   - name: Sender

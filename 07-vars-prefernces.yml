@@ -8,6 +8,7 @@
   vars_prompt:
     - name: Amount
       prompt: Enter Amount
+      private: false
   vars_files:
     - vars.yml
   tasks:

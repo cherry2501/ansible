@@ -6,7 +6,7 @@
     Match: 4 #num
     Venue: Melbourne
     Batsmen: # lists
-      -KL Rahul
+      - KL Rahul
       - Jaiswal
       - Gill
       - Virat

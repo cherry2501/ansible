@@ -5,7 +5,7 @@
     Amount: 15,000
     Sender: ABC
     Bank: SBI
-  vars_promt:
+  vars_prompt:
     - name: Amount
       prompt: Enter Amount
   vars_files:

@@ -9,7 +9,7 @@
     - mysql
     - backend
     - frontend
-
+    zone: charanworld.online
   tasks:
   - name:
     amazon.aws.ec2_instance:
@@ -23,3 +23,27 @@
   - name: print ec2_details
     ansible.builtin.debug:
       msg: "{{ ec2_instances }}"
+  
+  - name: create R53 Private records
+    amazon.aws.rote53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address}}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results }}"
+
+  - name: create public R53 record for frontend
+    amazon.aws.rote53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip}}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results }}"

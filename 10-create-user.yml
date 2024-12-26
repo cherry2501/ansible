@@ -1,0 +1,15 @@
+- name: create user
+  hosts: web
+  tasks:
+    - name: check user exists
+      ansible.builtin.command: id expense
+        register: USER
+        ignore_errors: true #ignore if errors and execution goes to next task
+    
+    - name: print user info
+      ansible.builtin.debug:
+        msg : "user_info: {{USER}}"
+    
+    - name: create user
+      ansible.builtin.command: useradd expense
+      when: rc != 0 

@@ -36,8 +36,8 @@
   - name: convert lit to map
     vars:
       bio:
-      - { "key": "Name","Value": "Charan" }
-      - { "key": "Age","Value": 25 }
-      - { "key": "Food","Value": "Rice-Dal" }
+      - { "key": "Name","value": "Charan" }
+      - { "key": "Age","value": 25 }
+      - { "key": "Food","value": "Rice-Dal" }
     ansible.builtin.debug:
       msg: " {{ bio | items2dict}}"

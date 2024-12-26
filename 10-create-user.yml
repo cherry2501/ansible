@@ -3,8 +3,8 @@
   tasks:
     - name: check user exists
       ansible.builtin.command: id expense
-        register: USER
-        ignore_errors: true #ignore if errors and execution goes to next task
+      register: USER
+      ignore_errors: true #ignore if errors and execution goes to next task
     
     - name: print user info
       ansible.builtin.debug:

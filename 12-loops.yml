@@ -1,0 +1,11 @@
+- name: loops
+  hosts: web
+  become: yes
+  tasks:
+  - name: installation
+    ansible.builtin.package:
+      name: {{ item.name }}
+      state: {{ item.state}}
+    loop:
+    - {name: 'nginx', state: 'present'}
+    - { name: 'mysql', state: 'present'}

@@ -20,6 +20,6 @@
       security_group: "{{ sg_id }}"
     loop: "{{ instances }}"
     register: ec2_instances
-- name: print ec2_details
-  ansible.builtin.debug:
-    msg: "{{ ec2_instances }}"
+  - name: print ec2_details
+    ansible.builtin.debug:
+      msg: "{{ ec2_instances }}"

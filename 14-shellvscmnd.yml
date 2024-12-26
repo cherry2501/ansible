@@ -4,7 +4,7 @@
 
   tasks:
   - name: create file and append logs
-    ansible.builtin.shell: ls-ltr > /tmp/output.txt #logins into server and executes cmnd
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt #logins into server and executes cmnd
 
   - name: check process
     ansible.builtin.shell: ps -ef | grep ssh

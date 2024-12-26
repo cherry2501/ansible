@@ -12,11 +12,11 @@
     ansible.builtin.debug:
      msg: " {{ print | upper}} "
 
-  - name: convert to upper case
+  - name: convert to lower case
     vars:
       greet: "Hello charan"
     ansible.builtin.debug:
-     msg: " {{ print | lower}} "
+     msg: " {{ greet | lower}} "
   
   - name: check ip address
     vars:

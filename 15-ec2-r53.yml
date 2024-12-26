@@ -1,22 +1,22 @@
 - name: Create EC2 and R53
-hosts: local
-connection: local
-vars:
-  sg_id: "sg-0544fbda6915c7068"
-  ami_id: "ami-09c813fb71547fc4f"
-  subnet_id: "subnet-04c1d9e4a6a0a6393"
-  instances:
-  - mysql
-  - backend
-  - frontend
+  hosts: local
+  connection: local
+  vars:
+    sg_id: "sg-0544fbda6915c7068"
+    ami_id: "ami-09c813fb71547fc4f"
+    subnet_id: "subnet-04c1d9e4a6a0a6393"
+    instances:
+    - mysql
+    - backend
+    - frontend
 
-tasks:
-- name:
-  amazon.aws.ec2_instance:
-    name: "{{ items }}"
-    image_id: "{{ ami_id }}"
-    instance_type: "t3.micro"
-    vpc_subnet_id: "{{ subnet_id }}"
-    security_group: "{{ sg_id }}"
-  loop: "{{ instances }}"
-  register: ec2_instances
+  tasks:
+  - name:
+    amazon.aws.ec2_instance:
+      name: "{{ items }}"
+      image_id: "{{ ami_id }}"
+      instance_type: "t3.micro"
+      vpc_subnet_id: "{{ subnet_id }}"
+      security_group: "{{ sg_id }}"
+    loop: "{{ instances }}"
+    register: ec2_instances

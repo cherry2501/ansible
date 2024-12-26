@@ -31,4 +31,11 @@
         age: 25
         Food: "Rice-Dal"
     ansible.builtin.debug:
-      msg: " {{ Bio | list2items}}"
+      msg: " {{ Bio | dict2items}}"
+
+  - name: convert lit to map
+    vars:
+      bio:
+      - { "key": "Name","Value": "Charan"}
+      - { "key": "Age", "Value": 25}
+      - { "key": "Food", "Value": "Rice-Dal"}

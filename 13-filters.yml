@@ -7,13 +7,14 @@
       msg: " Hello {{ name | default('charan')}} "
   
   - name: convert to upper case
-    print: "Hello charan"
+    vars:
+      print: "Hello charan"
     ansible.builtin.debug:
      msg: " {{ print | upper}} "
 
   - name: convert to upper case
     vars:
-      print: "Hello charan"
+      greet: "Hello charan"
     ansible.builtin.debug:
      msg: " {{ print | lower}} "
   

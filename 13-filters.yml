@@ -5,3 +5,13 @@
   - name: print the message
     ansible.builtin.debug:
       msg: " Hello {{ name | default('charan')}} "
+  
+  - name: convert to upper case
+    print: "Hello charan"
+    ansible.builtin.debug:
+     msg: " {{ print | upper}} "
+
+  - name: convert to upper case
+    print: "Hello charan"
+    ansible.builtin.debug:
+     msg: " {{ print | lower}} "

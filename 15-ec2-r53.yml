@@ -26,7 +26,7 @@
       msg: "{{ ec2_instances }}"
   
   - name: create R53 Private records
-    amazon.aws.rote53:
+    amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"
@@ -38,7 +38,7 @@
     loop: "{{ ec2_instances.results }}"
 
   - name: create public R53 record for frontend
-    amazon.aws.rote53:
+    amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
       record: "{{ zone }}"

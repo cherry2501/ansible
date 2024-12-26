@@ -1,7 +1,6 @@
 - name: Create EC2 and R53
   hosts: local
   connection: local
-  become: yes
   vars:
     sg_id: "sg-0544fbda6915c7068"
     ami_id: "ami-09c813fb71547fc4f"

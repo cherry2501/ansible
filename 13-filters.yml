@@ -12,6 +12,22 @@
      msg: " {{ print | upper}} "
 
   - name: convert to upper case
-    print: "Hello charan"
+    vars:
+      print: "Hello charan"
     ansible.builtin.debug:
      msg: " {{ print | lower}} "
+  
+  - name: check ip address
+    vars:
+      Ip_addrss: "222.222.0.10"
+    ansible.builtin.debug:
+      msg: "{{ Ip_addrss | ansible.utils.ipv4}}"
+
+  - name: convert map to list
+    vars: 
+      Bio:
+        name: "Charan"
+        age: 25
+        Food: "Rice-Dal"
+    ansible.builtin.debug:
+      msg: " {{ Bio | list2items}}"
